@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PostController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
@@ -18,4 +19,8 @@ use App\Http\Controllers\UserController;
 Route::get('/users', [UserController::class, 'index']);
 Route::post('/register', [UserController::class, 'register']);
 Route::post('/login', [UserController::class, 'login']);
+
+Route::get('/posts', [PostController::class, 'index']);
+Route::get('/following-posts', [PostController::class, 'followingPosts']);
+Route::post('/posts', [PostController::class, 'store']);
 
