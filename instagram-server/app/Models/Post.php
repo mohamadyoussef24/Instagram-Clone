@@ -12,4 +12,14 @@ class Post extends Model
         'user_id', 'image_url', 'likes',
     ];
 
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
+    public function likes()
+    {
+        return $this->hasMany(Like::class);
+    }
+
 }
