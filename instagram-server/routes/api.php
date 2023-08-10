@@ -24,3 +24,7 @@ Route::get('/posts', [PostController::class, 'index']);
 Route::get('/following-posts', [PostController::class, 'followingPosts']);
 Route::post('/posts', [PostController::class, 'store']);
 
+Route::post('/posts/{post}/like', [LikeController::class, 'toggleLike']);
+
+
+
