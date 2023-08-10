@@ -7,21 +7,23 @@ import ChatBubbleOutlineIcon from "@mui/icons-material/ChatBubbleOutline";
 import TelegramIcon from "@mui/icons-material/Telegram";
 import BookmarkBorderIcon from "@mui/icons-material/BookmarkBorder";
 
-const Posts = () => {
+const Posts = ({ user, postImage, likes, timestamp }) => {
   return (
     <div className='post'>
 
         <div className="post__header">
            <div className="post__headerAuthor">
-               <Avatar>R </Avatar>
-                SE Factory • <span>12h</span> 
+           <Avatar style={{ marginRight: "10px" }}>
+            {user.charAt(0).toUpperCase()}
+           </Avatar>{" "}
+           {user} • <span>{timestamp}</span>
             </div>
             <MoreHorizIcon />
         </div>
 
         <div className="post__image">
             <img
-            src='https://uploads-ssl.webflow.com/63e3828f575098222357ad70/64ad72a3008c1bf15de71268_Frame-92.png'
+            src={postImage}
             alt='jjjj' 
             />
         </div>
@@ -37,7 +39,7 @@ const Posts = () => {
             <BookmarkBorderIcon className="postIcon" />
           </div>
         </div>
-        Liked by 21 people.
+        Liked by {likes} people.
         </div>
     </div>
   )
